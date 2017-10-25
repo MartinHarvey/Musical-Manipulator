@@ -1,2 +1,14 @@
 # Musical-Manipulator
-Project using pyDub to manipulae and edit audio files
+Project using pyDub to manipulate and edit audio files
+
+
+Currently only Reverses a .mp3 file.
+
+To Do:
+<li> 
+  Create file dialog
+<li> 
+  Add Compatability for more file formats
+<li>
+  Add more manipulation functions
+ 
