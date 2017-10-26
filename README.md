@@ -11,4 +11,7 @@ To Do:
   Add Compatability for more file formats
 <li>
   Add more manipulation functions
+<li>
+  Add metadata to reversed files
+  
  
