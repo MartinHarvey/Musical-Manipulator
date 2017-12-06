@@ -4,8 +4,6 @@ from pydub import AudioSegment
 from Tkinter import *
 from tkFileDialog import *
 
-#Importing Functions from file Functions.py
-from Functions import *
 #Initilising variables
 userChoice = ""
 file_path = ""
@@ -23,7 +21,7 @@ track = AudioSegment.from_mp3(file_path)
 #Loop continues until exit command is given
 while loop == "TRUE":
     #Users given choice of commands
-    print "You can reverse, length-check and exit"
+    print "You can reverse, length-check, repeat, fade-in, fade-out and exit"
     #User command choice put into userChoice variable
     userChoice = raw_input("Please type in your choice. ")
 
@@ -32,13 +30,15 @@ while loop == "TRUE":
         track = track.reverse()
 
     if userChoice == "length-check":
-        length(track)
-
-
+        print track.duration_seconds
 
     #Exits loop if exit is chosen
     if userChoice == "exit":
         loop = "FALSE"
+
+    if userChoice == "repeat":
+        track = track * 2
+
 
 
 #Getting save path from user

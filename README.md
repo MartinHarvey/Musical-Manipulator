@@ -1,8 +1,8 @@
 ## Musical-Manipulator
 Project using pyDub to manipulate and edit audio files.
 
-<a href = "changelog.md"> Changelog </a>
-<a href = "License"> License </a>
+<a href = "https://github.com/MartinHarvey/Musical-Manipulator/blob/master/Changelog.md"> Changelog </a>
+
 
 #To Do:
 <li>
