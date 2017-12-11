@@ -16,11 +16,10 @@ file_path = askopenfilename(initialdir = "/home/", title = "What file do you wan
 #Importing audio file into variable track
 track = AudioSegment.from_mp3(file_path)
 
-
 #Loop continues until exit command is given
 while loop == "TRUE":
     #Users given choice of commands
-    print "You can reverse, length-check, repeat, edit gain, merge tracks and exit"
+    print "You can reverse, duration, repeat, edit volume, merge tracks, check volume and exit"
     #User command choice put into userChoice variable
     userChoice = raw_input("Please type in your choice. ")
 
@@ -28,8 +27,8 @@ while loop == "TRUE":
     if userChoice == "reverse":
         track = track.reverse()
 
-    if userChoice == "length-check":
-        print track.duration_seconds
+    if userChoice == "duration":
+        print "The track is " + str(int(track.duration_seconds)) + " seconds long."
 
     #Exits loop if exit is chosen
     if userChoice == "exit":
@@ -38,14 +37,20 @@ while loop == "TRUE":
     if userChoice == "repeat":
         track = track * 2
 
-    if userChoice == "edit gain":
-        gain = raw_input("By how many dB do you wish to edit volume?")
+    if userChoice == "edit volume":
+        gain = raw_input("By how many dB do you wish to edit volume? ")
         track = track + gain
 
     if userChoice == "merge tracks":
         file_path = askopenfilename(initialdir = "/home/", title = "What do you want to merge track with?", filetypes = (("mp3 Files", "*.mp3"), ("all files", "*.*" )))
         mergeTrack = AudioSegment.from_mp3(file_path)
         track = track + mergeTrack
+
+    if userChoice == "volume":
+        print "Relative volume is " + str(int(track.dBFS)) + " dB."
+
+
+
 
 
 #Getting save path from user
